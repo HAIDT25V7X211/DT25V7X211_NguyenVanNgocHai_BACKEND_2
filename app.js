@@ -19,9 +19,9 @@ app.use((req, res, next) => {
 });
 
 //define error handling middleware last, after other app.use() and routes calls
-app.use((error, req, res, next) => {
+app.use((err, req, res, next) => {
     return res.status(error.statusCode || 500).json({
-        message: error.message || "Internal Server Error",
+        message: err.message || "Internal Server Error",
     });
 });
 
