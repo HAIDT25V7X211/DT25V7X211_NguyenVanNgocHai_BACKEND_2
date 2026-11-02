@@ -12,6 +12,8 @@ class ContactService {
             address: payload.address,
             phone: payload.phone,
             favorite: payload.favorite,
+            //Thêm mới
+            interests: Array.isArray(payload.interests) ? payload.interests : undefined,
         };
 
         Object.keys(contact).forEach((key => contact[key] === undefined && delete contact[key])
